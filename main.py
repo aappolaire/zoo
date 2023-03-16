@@ -1,8 +1,10 @@
 #main
 #Programme principal
 
-from animaux import *
+from animal import *
 from zoo import *
+from serpent import *
+from oiseau import *
 
 ours = Animal("Teddy l'ours",150,2)
 print ("Cet ours mesure", ours.taille_animal, "m.")
@@ -18,8 +20,6 @@ print ("Ce condor mesure", condor.taille_animal, "m.")
 print ("Ce condor pèse", condor.poids_animal, "kg.")
 print ("Le condor dit : pour me déplacer",condor.se_deplacer(),".")
 print ("Le condor peut voler jusqu'à une altitude maximum de",condor.altitude_max,"mètres.","\n")
-
-
 
 liste_animaux_dans_le_zoo = [ours, cobra, condor]
 zoo_grenoble = Zoo(liste_animaux_dans_le_zoo)
@@ -41,5 +41,7 @@ print ([str(animal) for animal in nouveau_zoo.liste_animaux], "\n")
 
 grand_zoo = zoo_grenoble + nouveau_zoo
 print ([str(animal) for animal in grand_zoo.liste_animaux], "\n")
+
+print (grand_zoo.liste_animaux)
 
 

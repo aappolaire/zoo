@@ -1,6 +1,6 @@
 #Définition de la classe Zoo
 
-from animaux import Animal
+from animal import Animal
 
 
 class Zoo:
@@ -22,5 +22,4 @@ class Zoo:
 
     def __add__(self, autre_zoo):
         animaux_nouveau_zoo = self.liste_animaux + autre_zoo.liste_animaux
-        zoo_fusion = Zoo(animaux_nouveau_zoo)
-        return zoo_fusion
+        return Zoo(animaux_nouveau_zoo)

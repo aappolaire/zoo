@@ -44,16 +44,7 @@ class Animal:
     def __str__(self):
         return f"{self.nom_animal}, poids = {self.poids_animal} kg, taille = {self.taille_animal} m"
 
-class Serpent(Animal):
+    def __repr__(self):
+        return f"{self.nom_animal}, poids = {self.poids_animal} kg, taille = {self.taille_animal} m"
 
-    def se_deplacer(self):
-        return "je rampe"
 
-class Oiseau(Animal):
-
-    def __init__(self, nom, poids, taille, altitude_max): #altitude_max en mètres
-        super().__init__(nom, poids, taille) #L'utilisation de super ne nécéssite pas de rappeler le self. ce serait nécessaire avec le nom de la classe
-        self.altitude_max = altitude_max
-
-    def se_deplacer(self):
-        return "je vole"
