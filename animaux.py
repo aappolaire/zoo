@@ -6,33 +6,31 @@ class Animal:
     def __init__(self, poids, taille): #poids en kg, taille en m
         #self.__poids_animal = poids
         #self.__taille_animal = taille
-        self.set_poids_animal(poids)
-        self.set_taille_animal(taille)
+        self.poids_animal = poids
+        self.taille_animal = taille
 
     def se_deplacer(self):
         pass
     
-    #getters
-    def get_poids_animal(self):
-        return self.__poids_animal
+    @property
+    def poids_animal(self):
+        return self._poids_animal
 
-    def get_taille_animal(self):
-        return self.__taille_animal
+    @property
+    def taille_animal(self):
+        return self._taille_animal
 
-    #setters
-    def set_poids_animal(self, poids):
-        if poids > 0 :
-            self.__poids_animal = poids
-        else :
+    @poids_animal.setter
+    def poids_animal(self, poids):
+        if poids < 0 :
             raise ValueError (" Attention ! Un animal ne peut pas avoir un poids nul ou négatif ! ")
-        
+        self._poids_animal = poids
 
-    def set_taille_animal(self, taille):
-        if taille > 0 :
-            self.__taille_animal = taille
-        else :
+    @taille_animal.setter
+    def taille_animal(self, taille):
+        if taille < 0 :
             raise ValueError (" Attention ! Un animal ne peut pas avoir une taille négative ! ")
-        
+        self._taille_animal = taille
 
 class Serpent(Animal):
 
