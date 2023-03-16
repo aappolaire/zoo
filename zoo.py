@@ -20,6 +20,7 @@ class Zoo:
     def ajouter_animal(self, animal):
         self.liste_animaux.append(animal)
 
-    def liste_des_animaux(self):
-        for animal in (self.liste_animaux):
-            return (animal.get_poids_animal())
+    def __add__(self, autre_zoo):
+        animaux_nouveau_zoo = self.liste_animaux + autre_zoo.liste_animaux
+        zoo_fusion = Zoo(animaux_nouveau_zoo)
+        return zoo_fusion
