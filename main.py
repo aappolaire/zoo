@@ -2,6 +2,7 @@
 #Programme principal
 
 from animaux import *
+from zoo import *
 
 ours = Animal(150,2)
 print ("Cet ours mesure", ours.get_taille_animal(), "m.")
@@ -17,3 +18,12 @@ print ("Ce condor mesure", condor.get_taille_animal(), "m.")
 print ("Ce condor pèse", condor.get_poids_animal(), "kg.")
 print ("Le condor dit : pour me déplacer",condor.se_deplacer(),".")
 print ("Le condor peut voler jusqu'à une altitude maximum de",condor.altitude_max,"mètres.","\n")
+
+panda = Animal(100,1.5)
+
+liste_animaux_dans_le_zoo = [ours, cobra, condor]
+
+zoo_grenoble = Zoo(liste_animaux_dans_le_zoo)
+print (zoo_grenoble.liste_animaux)
+zoo_grenoble.ajouter_animal(panda)
+print (zoo_grenoble.liste_animaux)
