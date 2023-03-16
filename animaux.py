@@ -21,22 +21,18 @@ class Animal:
 
     #setters
     def set_poids_animal(self, poids):
-        while True:
-            try:
-                poids > 0
-                break
-            except ValueError:
-                print(" Attention ! Un animal ne peut pas avoir un poids nul ou négatif ! ")
-        self.__poids_animal = poids
+        if poids > 0 :
+            self.__poids_animal = poids
+        else :
+            raise ValueError (" Attention ! Un animal ne peut pas avoir un poids nul ou négatif ! ")
+        
 
     def set_taille_animal(self, taille):
-        while True:
-            try:
-                taille > 0
-                break
-            except ValueError:
-                print(" Attention ! Un animal ne peut pas avoir une taille nulle ou négative ! ")
-        self.__taille_animal = taille
+        if taille > 0 :
+            self.__taille_animal = taille
+        else :
+            raise ValueError (" Attention ! Un animal ne peut pas avoir une taille négative ! ")
+        
 
 class Serpent(Animal):
 
